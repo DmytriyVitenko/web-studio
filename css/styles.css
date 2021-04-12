@@ -14,6 +14,7 @@
   --accent-color: #2196f3;
   --background-color: #ffffff;
   --secondary-background-color: #2f303a;
+  --team-background-color: #f5f4fa;
 }
 
 /* utility*/
@@ -45,11 +46,16 @@ p {
   margin: 0;
 }
 
-/* img {
+img {
   display: block;
   max-width: 100%;
   height: auto;
-} */
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 /* hide the item */
 .hiden {
   position: absolute;
@@ -67,11 +73,7 @@ p {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  outline: 1px solid rgb(214, 113, 55);
-}
-
-header {
-  background-color: aqua;
+  /* outline: 1px solid rgb(214, 113, 55); */
 }
 
 .page-header .container,
@@ -81,7 +83,7 @@ header {
   align-items: center;
 }
 
-.page-logo {
+.logo {
   font-family: 'Raleway', 'sans-serif';
   font-weight: 700;
   font-size: 26px;
@@ -90,11 +92,11 @@ header {
   color: var(--accent-color);
 }
 
-.page-logo span {
+.logo span {
   color: #000000;
 }
 
-.page-nav .page-logo {
+.page-nav .logo {
   margin-right: 93px;
 }
 
@@ -169,7 +171,6 @@ header {
 
 /* FEATURES */
 .features {
-  background-color: blueviolet;
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -184,7 +185,6 @@ header {
 
 .features-list-item {
   width: calc((100% - 90px) / 4);
-  background-color: gold;
 }
 
 .features-list-title {
@@ -205,7 +205,6 @@ header {
 /* WORKS */
 
 .works {
-  background-color: rgb(73, 226, 43);
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -231,9 +230,9 @@ header {
 /* TEAM */
 
 .taem {
-  background-color: rgb(43, 61, 226);
   padding-top: 94px;
   padding-bottom: 94px;
+  background-color: var(--team-background-color);
 }
 
 .team-list {
@@ -242,6 +241,14 @@ header {
 
 .team-list .item:not(:last-child) {
   margin-right: 30px;
+}
+
+.team-list .item {
+  padding-bottom: 30px;
+  background-color: var(--background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-member-foto {
@@ -267,24 +274,28 @@ header {
 
 /* FOOTER */
 .page-footer {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  color: rgba(255, 255, 255, 0.6);
   background-color: var(--secondary-background-color);
 }
 
-.page-footer-adress {
-  font-style: normal;
+.page-footer .logo {
+  display: block;
+  margin-bottom: 21px;
 }
 
-.page-footer-adress > p {
+.page-footer .adress {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: #ffffff;
+  font-style: normal;
 }
 
-.page-footer-adress > a {
-  font-size: 14px;
-  line-height: 1.7;
-  letter-spacing: 0.03em;
+.page-footer .link {
+  display: block;
+  margin-top: 10px;
   color: rgba(255, 255, 255, 0.6);
 }
 
