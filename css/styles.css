@@ -1,3 +1,13 @@
+/* Позиционирование */
+
+/* Блочная модель */
+
+/* Типографика */
+
+/* Отображение */
+
+/* Прочее */
+
 :root {
   --primary-text-color: #757575;
   --secondary-text-color: #212121;
@@ -5,6 +15,8 @@
   --background-color: #ffffff;
   --secondary-background-color: #2f303a;
 }
+
+/* utility*/
 
 body {
   background-color: var(--background-color);
@@ -29,11 +41,46 @@ h4 {
   margin: 0;
 }
 
-/* HEADER */
+p {
+  margin: 0;
+}
+
+/* img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+} */
+/* hide the item */
+.hiden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 1px solid rgb(214, 113, 55);
+}
 
 header {
   background-color: aqua;
 }
+
+.page-header .container,
+.page-nav,
+.page-nav-list {
+  display: flex;
+  align-items: center;
+}
+
 .page-logo {
   font-family: 'Raleway', 'sans-serif';
   font-weight: 700;
@@ -47,13 +94,28 @@ header {
   color: #000000;
 }
 
+.page-nav .page-logo {
+  margin-right: 93px;
+}
+
+.page-nav .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 .page-nav,
-.link {
+.link,
+.contacts {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-text-color);
+}
+
+.page-header .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .page-nav,
@@ -63,16 +125,27 @@ header {
   color: var(--accent-color);
 }
 
+.contacts {
+  display: flex;
+  margin-left: auto;
+}
+
+.contacts .item:not(:last-child) {
+  margin-right: 50px;
+}
+
 /* HERO */
 
 .hero {
   background-color: var(--secondary-background-color);
+  text-align: center;
+  height: 400px;
 }
 .hero-title {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.4;
-  text-align: center;
+
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-top: 0;
@@ -81,17 +154,37 @@ header {
 }
 
 .hero-button {
+  display: inline-block;
+  min-width: 200px;
+  padding: 10px 32px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.8;
-  text-align: center;
   letter-spacing: 0.06em;
   color: #ffffff;
+  background-color: var(--accent-color);
+  border-radius: 4px;
 }
 
 /* FEATURES */
 .features {
   background-color: blueviolet;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.features-list {
+  display: flex;
+}
+
+.features-list-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.features-list-item {
+  width: calc((100% - 90px) / 4);
+  background-color: gold;
 }
 
 .features-list-title {
@@ -110,11 +203,23 @@ header {
 }
 
 /* WORKS */
+
 .works {
   background-color: rgb(73, 226, 43);
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+
+.works .list {
+  display: flex;
+}
+
+.works .list .item:not(:last-child) {
+  margin-right: 30px;
 }
 .works-title,
 .team-title {
+  margin-bottom: 50px;
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -125,13 +230,29 @@ header {
 
 /* TEAM */
 
-.taem-section {
+.taem {
   background-color: rgb(43, 61, 226);
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
+
+.team-list {
+  display: flex;
+}
+
+.team-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.team-member-foto {
+  margin-bottom: 30px;
+}
+
 .team-member-name {
+  margin-bottom: 10px;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.19px;
+  line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--secondary-text-color);
@@ -152,12 +273,14 @@ header {
 .page-footer-adress {
   font-style: normal;
 }
+
 .page-footer-adress > p {
   font-size: 14px;
   line-height: 1.7;
   letter-spacing: 0.03em;
   color: #ffffff;
 }
+
 .page-footer-adress > a {
   font-size: 14px;
   line-height: 1.7;
